@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מחשבון דילול צבע</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="calculator">
+    <div class="container">
+        <h1>מחשבון דילול צבע</h1>
+        <button onclick="logout()" style="width: auto; float: left;">התנתק</button>
+        <div class="input-section">
+            <label for="ratio">יחס בסיס למקשה:</label>
+            <input type="text" id="ratio" placeholder="לדוגמה: 3:1">
+
+            <label for="containerHeight">גובה המיכל (ס"מ):</label>
+            <input type="number" id="containerHeight" min="1" step="0.1">
+
+            <label for="dilutionPercentage">אחוז דילול:</label>
+            <input type="number" id="dilutionPercentage" min="0" max="100" step="0.1">
+
+            <button onclick="calculate()">חשב</button>
+        </div>
+        <div class="output-section">
+            <p>גובה משולב של בסיס ומקשה: <span id="combinedHeight"></span> ס"מ</p>
+            <p>גובה הבסיס: <span id="baseHeight"></span> ס"מ</p>
+            <p>גובה המקשה: <span id="hardenerHeight"></span> ס"מ</p>
+            <p>גובה המדלל: <span id="diluentHeight"></span> ס"מ</p>
+        </div>
+        <div class="visual-representation">
+            <svg id="container" width="200" height="400"></svg>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
